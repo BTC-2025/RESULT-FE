@@ -1,65 +1,53 @@
-# ResultHub Web Frontend
+# ResultHub Public Web
 
-This repository contains the web-based frontend application for the ResultHub platform. It is a modern, responsive web application designed for high performance and excellent user experience.
+This repository contains the front-facing web application built explicitly for the end-users of ResultHub.
 
-## 🚀 Technology Stack
+## 🎯 Purpose
+The Public Web platform allows users to access the platform via their browsers rather than the mobile app. It provides a rich, dynamic social experience where users can view their feeds, search for results, view public profiles, and interact with community content.
 
-- **Framework:** Next.js (App Router)
-- **Library:** React
-- **Styling:** Tailwind CSS
+## 📦 What It Has
+- **Social Feed & Interaction:** A dynamic feed interface featuring posts, likes, and comments.
+- **Search & Discovery:** Robust search capabilities for finding other users, public results, and sports data.
+- **User Authentication:** Complete login, signup, and forgotten password workflows.
+- **Public Profiles:** Viewable profiles displaying user stats and activity.
+- **Modern UI Components:** A fully responsive, animated, and visually premium interface built with modern design principles (glassmorphism, dark mode compatibility).
+
+## 🛠️ How It Is Built
+### Tech Stack
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **Library:** React 19
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
 - **Language:** TypeScript
-- **Bundler:** Turbopack (for local development speed)
 
-## 📋 Prerequisites
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v20+ recommended)
+- A running instance of the `backend-mern` API.
 
-Before you begin, ensure you have met the following requirements:
-* **Node.js** (v18 or higher) installed.
-* **npm** or **yarn** installed.
+### Getting Started
 
-## 🛠️ Getting Started
+1. **Install Dependencies**
+   Navigate to the root of this folder and install the required npm packages:
+   ```bash
+   npm install
+   ```
 
-Follow these steps to set up the web frontend locally:
+2. **Environment Configuration**
+   Create a `.env.local` file in the root directory to point to your local backend API:
+   ```env
+   NEXT_PUBLIC_API_URL=http://localhost:3001/api
+   ```
 
-### 1. Install Dependencies
+3. **Start the Development Server**
+   Run the Next.js development server:
+   ```bash
+   npm run dev
+   ```
+   *The application will start locally at `http://localhost:3000`.*
 
-Install the required Node.js packages:
-```bash
-npm install
-```
-
-### 2. Environment Setup
-
-Create a local environment file (`.env.local`) based on the project requirements to securely store your API keys and configuration variables:
-```bash
-# Example .env.local variables
-NEXT_PUBLIC_API_URL=http://localhost:8080/api/v1
-# Add any required secret keys (e.g. SPORTSRC_V2_KEY)
-```
-*Never commit `.env.local` to the repository.*
-
-### 3. Run the Development Server
-
-Start the local development server with Turbopack for ultra-fast compilation:
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
-
-## 📁 Repository Structure
-
-* `src/app/` - Contains the Next.js App Router pages and API routes.
-* `src/components/` - Contains reusable React UI components.
-* `src/context/` - Contains React context providers (e.g., AuthContext).
-* `public/` - Contains static assets like images and icons.
-
-## 📦 Building for Production
-
-To create an optimized production build, run:
-```bash
-npm run build
-npm start
-```
-
-## 🤝 Contributing
-
-When contributing, please follow the established code style, ensure there are no TypeScript errors (`npm run build` will catch these), and submit a Pull Request.
+### Available Scripts
+- `npm run dev`: Starts the local development server with hot-module replacement.
+- `npm run build`: Compiles the application into an optimized production build.
+- `npm run start`: Starts the application in production mode (requires a prior build).
+- `npm run lint`: Runs ESLint to catch syntax and styling errors.
